@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -58,7 +60,12 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
+//    implementation("androidx.compose.material:material:1.6.7")
+//    implementation("com.example.material:material:1.1.1") {
+//        exclude group: 'androidx.compose.material3'
+//    }
     implementation(libs.androidx.material3)
+//    implementation(libs.androidx.material3.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -66,4 +73,29 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    //navigation-compose
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+
+    //coil
+    implementation("io.coil-kt:coil-compose:2.2.2")
+
+    //hilt
+    implementation("com.google.dagger:hilt-android:2.49")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.1")
+    kapt("com.google.dagger:hilt-compiler:2.49")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+
+
+    //okhttp3
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+
+    //retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    //pager
+    implementation("com.google.accompanist:accompanist-pager:0.28.0")
+
+    //constrain layout
+    implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 }
